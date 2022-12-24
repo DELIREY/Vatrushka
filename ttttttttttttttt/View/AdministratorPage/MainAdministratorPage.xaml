@@ -1,0 +1,97 @@
+﻿<Page x:Class="ttttttttttttttt.View.AdministratorPage.MainAdministratorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ttttttttttttttt.View.AdministratorPage"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="1000"
+      Title="MainAdministratorPage"
+      FontFamily="Consolas">
+
+    <Grid>
+
+        <Border HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Width="980"
+                Height="480"
+                Background="White"
+                Effect="{StaticResource MaterialDesignElevationShadow16}"
+                >
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="*"/>
+
+
+                </Grid.RowDefinitions>
+                <Menu Grid.Row="0"
+                      IsMainMenu="True"
+                      Style="{DynamicResource MaterialDesignMenu}"
+                      Background="#2395f3"
+                      Foreground="White"
+                      >
+
+                    <Menu.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <DockPanel Margin="0,0,-40,0"/>
+
+                        </ItemsPanelTemplate>
+
+                    </Menu.ItemsPanel>
+                    <MenuItem Header="Информация о пользователях"
+                              Click="MenuitemUser_Click"
+                              HorizontalAlignment="Center"
+                              Cursor="Hand"
+                              Effect="{StaticResource MaterialDesignElevationShadow16}" Margin="0,1,0,1">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="AccountMultipleOutline"
+                                                     Foreground="White"
+                                                     Width="20"
+                                                     Height="20"
+                                                      Margin="-2 -2 0 0 "/>
+                        </MenuItem.Icon>
+
+                    </MenuItem>
+                    <MenuItem Header="Информация о работодателях"
+                              HorizontalAlignment="Center"
+                              Click="MenuEmployer_Click"
+                              Cursor="Hand"
+                              Effect="{StaticResource MaterialDesignElevationShadow16}"
+                              Margin="50 0 0 0 ">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="AccountGroupOutline"
+                                                     Foreground="White"
+                                                     Width="20"
+                                                     Height="20"
+                                                     
+                                                      Margin="0 -2 -5 0 "/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Информация о заказах"
+                              HorizontalAlignment="Left"
+                              Click="MenuItemOrders_Click"
+                              Cursor="Hand"
+                              Effect="{StaticResource MaterialDesignElevationShadow16}"
+                              Margin="90,2,0,0" Width="504">
+                        <MenuItem.Icon>
+                            <materialDesign:PackIcon Kind="OrderBoolAscending"
+                                                     Foreground="White"
+                                                     Width="20"
+                                                     Height="20"
+                                                     Margin="0 -2 0 0 "/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </Menu>
+
+                <Grid Grid.Row="1"
+                      x:Name="GridContenLoad"/>
+
+            </Grid>
+
+        </Border>
+
+    </Grid>
+</Page>

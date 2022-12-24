@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="39a843aa95304e629919c86e01b7c0a0" Name="Diagram1">
+        <EntityTypeShape EntityType="VatrushkaDBModel.Contracts" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="VatrushkaDBModel.Employees" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VatrushkaDBModel.Material" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VatrushkaDBModel.Orders" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="VatrushkaDBModel.Product" Width="1.5" PointX="5.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="VatrushkaDBModel.Role" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VatrushkaDBModel.Suppliers" Width="1.5" PointX="1.5" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="VatrushkaDBModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VatrushkaDBModel.Users" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="VatrushkaDBModel.FK_Contracts_Suppliers" ManuallyRouted="false" />
+        <AssociationConnector Association="VatrushkaDBModel.FK_Material_Contracts" ManuallyRouted="false" />
+        <AssociationConnector Association="VatrushkaDBModel.FK_Material_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="VatrushkaDBModel.FK_Orders_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="VatrushkaDBModel.FK_Product_Orders" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

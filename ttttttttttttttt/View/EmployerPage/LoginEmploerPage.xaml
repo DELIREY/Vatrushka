@@ -1,0 +1,114 @@
+﻿<Page x:Class="ttttttttttttttt.View.EmployerPage.LoginEmploerPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:ttttttttttttttt.View.EmployerPage"
+      mc:Ignorable="d" 
+      Height="500"
+      Width="800"
+      FontFamily="Consolas">
+
+    <Grid>
+        <Border VerticalAlignment="Center" 
+                HorizontalAlignment="Center"
+                Height="480"
+                Width="480"
+                Background="White"
+                CornerRadius="45">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="300"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Row="0" VerticalAlignment="Top"
+                            HorizontalAlignment="Center"
+                            Margin="20 40 0 0">
+                    <TextBlock Text="АВТОРИЗАЦИЯ" 
+                               Foreground="#2395f3" 
+                               FontSize="56" Height="65"
+                               FontWeight="SemiBold"/>
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Margin="20 -30 15 0">
+                    <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
+                    ToolTip="Назад"
+                    x:Name="BtnClose"
+                    Click="BtnClose_Click">
+                        <materialDesign:PackIcon Kind="KeyboardBackspace "
+                                         Foreground="#2395f3"/>
+                    </Button>
+                </StackPanel>
+
+
+                <StackPanel Grid.Row="1" Margin="0,0,0,-30">
+                    <StackPanel Grid.Row="1" Orientation="Horizontal"
+                            HorizontalAlignment="Center"
+                            Margin="0 100 0 0">
+                        <materialDesign:PackIcon Kind="AccountOutline" 
+                                             VerticalAlignment="Center" 
+                                             Height="30" Width="30" />
+                        <TextBox Width="300"
+                             
+                             x:Name="TbLogin"
+                             FontSize="15"
+                             Foreground="Black"
+                             materialDesign:HintAssist.Hint="Введите логин"
+                                 
+                             materialDesign:TextFieldAssist.HasClearButton="True"
+                             Background="Transparent" 
+                             TextAlignment="Left"
+                             BorderBrush="Black" 
+                              Height="25"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" 
+                           Grid.Row="1" 
+                            VerticalAlignment="Top" 
+                            HorizontalAlignment="Center" 
+                            Margin="0 10 0 0">
+                        <materialDesign:PackIcon Kind="LockOutline" 
+                                             VerticalAlignment="Center" 
+                                             Height="30" 
+                                             Width="30"/>
+                        <PasswordBox Background="Transparent" 
+                             Height="26" Width="300" 
+                             BorderBrush="Black" 
+                             
+                             FontSize="15"
+                             materialDesign:HintAssist.Hint="Введите пароль"
+                             materialDesign:TextFieldAssist.HasClearButton="True"
+                             x:Name="PsbPassword"/>
+                    </StackPanel>
+
+                    <StackPanel Margin="0 70 0 0"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="LoginVariant " 
+                                                 Height="30"
+                                                 Width="30"
+                                                 Margin="0 9"/>
+                        <Button Background="#2395f3"
+                            VerticalAlignment="Center"
+                            Foreground="White"
+                            Height="45"
+                            Width="248"
+                            x:Name="BtnLogin"
+                            BorderThickness="0"                            
+                            Click="BtnLogin_Click"
+                                >
+                            <TextBlock Text="ВХОД" FontSize="28"
+                                       FontWeight="SemiBold"/>
+                        </Button>
+                    </StackPanel>
+
+
+
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

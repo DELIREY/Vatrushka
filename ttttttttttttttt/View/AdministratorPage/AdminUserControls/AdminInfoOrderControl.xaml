@@ -1,0 +1,74 @@
+﻿<Page x:Class="ttttttttttttttt.View.AdministratorPage.AdminUserControls.AdminInfoOrderControl"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ttttttttttttttt.View.AdministratorPage.AdminUserControls"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AdminInfoOrderControl">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Margin="5">
+            <DataGrid x:Name="DataOrderInfo"
+                     FontSize="15"
+                      Height="400"
+                      Width="950"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      CanUserSortColumns="False"
+                      Background="White"
+                      RowBackground="White"
+                      AlternatingRowBackground="LightGray"
+                      GridLinesVisibility="Horizontal"
+                      ColumnHeaderHeight="50"
+                      CanUserAddRows="False"
+                      CanUserDeleteRows="False"
+                      CanUserResizeColumns="False"
+                      Effect="{StaticResource MaterialDesignElevationShadow16}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="Auto" Header="ЗАКАЗ" Binding="{Binding Name}" FontSize="15"/>
+                    <DataGridTextColumn Width="Auto" Header="ИМЯ СОТРУДНИКА" Binding="{Binding Employees.Name}" FontSize="15"/>
+                    <DataGridTextColumn Width="Auto" Header="ТЕЛЕФОН СОТРУДНИКА" Binding="{Binding Employees.Telephone}" FontSize="15"/>
+
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Background="Gold"
+                                        Foreground="Black"
+                                        x:Name="BtnDelete"
+                                        Click="BtnDelete_Click"
+                                        ToolTip="Удалить заказ"
+                                        BorderBrush="Gold"
+                                        Style="{StaticResource MaterialDesignFlatLightButton}">
+                                    <StackPanel Orientation="Horizontal">
+                                        <materialDesign:PackIcon Kind="Remove"/>
+
+                                    </StackPanel>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    Margin="0 -345 30 0">
+            <Button Style="{StaticResource MaterialDesignIconForegroundButton}"
+                    
+                    x:Name="BtnClose"
+                    Click="BtnClose_Click"
+                    ToolTip="Назад"
+                    Cursor="Hand">
+
+                <materialDesign:PackIcon Kind="Close"
+                                         Foreground="Black"/>
+            </Button>
+        </StackPanel>
+    </Grid>
+</Page>

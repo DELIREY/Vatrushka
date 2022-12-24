@@ -1,0 +1,150 @@
+﻿<Page x:Class="ttttttttttttttt.View.UserPage.MainUserPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:ttttttttttttttt.View.UserPage"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="1000"
+      Title="MainUserPage"
+      FontFamily="Consolas">
+
+    <Grid>
+        <Border HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                CornerRadius="40"
+                Width="750"
+                Height="400"
+                Background="White"
+                Effect="{StaticResource MaterialDesignElevationShadow16}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="64"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border Width="60"
+                        Height="400"
+                        Background="Gold"
+                        CornerRadius="25 0 0 25"
+                        HorizontalAlignment="Left">
+                    <ListView x:Name="ListViewMenu"
+                              Margin="0 80"
+                              FontSize="10"
+                              SelectedIndex="0"
+                              Foreground="White">
+                        <ListViewItem Cursor="Hand"
+                                      ToolTip="Уведомления"
+                                      IsEnabled="False">
+                            <StackPanel>
+                                <materialDesign:PackIcon Kind="Notifications"
+                                                         Margin="5"
+                                                         VerticalAlignment="Center"
+                                                         Foreground="Black"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Cursor="Hand"
+                                      ToolTip="Настройки"
+                                      IsEnabled="False">
+                            <StackPanel>
+                                <materialDesign:PackIcon Kind="Settings"
+                                                         VerticalAlignment="Center"
+                                                         Margin="5"
+                                                         Foreground="Black"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Cursor="Hand"
+                                      ToolTip="Архив"
+                                      IsEnabled="False">
+                            <StackPanel>
+                                <materialDesign:PackIcon Kind="Archive"
+                                                         VerticalAlignment="Center"
+                                                         Margin="5"
+                                                         Foreground="Black"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Cursor="Hand"
+                                      ToolTip="Баланс"
+                                      IsEnabled="False">
+                            <StackPanel>
+                                <materialDesign:PackIcon Kind="Bitcoin"
+                                                         VerticalAlignment="Center"
+                                                         Margin="5"
+                                                         Foreground="Black"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Cursor="Hand"
+                                      ToolTip="Доска объявлений">
+                            <StackPanel>
+                                <materialDesign:PackIcon Kind="OrderBoolAscending"
+                                                         VerticalAlignment="Center"
+                                                         Margin="5"
+                                                         Foreground="Black"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Cursor="Hand"
+                                      ToolTip="Выйти"
+                                      MouseDoubleClick="ListViewItem_MouseDoubleClick">
+                            <StackPanel>
+                                <materialDesign:PackIcon Kind="Logout"
+                                                         VerticalAlignment="Center"
+                                                         Margin="5"
+                                                         Foreground="Black"/>
+                            </StackPanel>
+                        </ListViewItem>
+                    </ListView>
+                </Border>
+                <StackPanel HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Grid.Column="1"
+                            Margin="5">
+                    <DataGrid x:Name="DataOrderInfo"
+                              FontSize="15"
+                              Height="380"
+                              Width="665"
+                              AutoGenerateColumns="False"
+                              IsReadOnly="True"
+                              CanUserSortColumns="False"
+                              Background="White"
+                              RowBackground="White"
+                              AlternatingRowBackground="#F0FFF0"
+                              GridLinesVisibility="Horizontal"
+                              ColumnHeaderHeight="50"
+                              CanUserAddRows="False"
+                              CanUserDeleteRows="False"
+                              CanUserResizeRows="False"
+                              Effect="{StaticResource MaterialDesignElevationShadow16}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="Auto"
+                                                Header="ИМЯ ЗАКАЗЧИКА"
+                                                Binding="{Binding Employees.Name}"
+                                                FontSize="15"/>
+                            <DataGridTextColumn Width="340"
+                                                Header="Заказ"
+                                                Binding="{Binding Name}"
+                                                FontSize="15"/>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Background="Gold"
+                                                Foreground="Black"
+                                                x:Name="BtnOk"
+                                                Click="BtnOk_Click"
+                                                ToolTip="Оставить заявку на выполнение"
+                                                BorderBrush="White"
+                                                Style="{StaticResource MaterialDesignFlatLightButton}">
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon Kind="Check"/>
+                                            </StackPanel>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>
